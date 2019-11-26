@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+  <title>Insert title here</title>
+  <script type="text/javascript" src="/resources/jquery-3.1.1.min.js"></script>
+</head>
+<body>
+<h2 align="center">用户登陆</h2>
+<form action="/login/login" method="post">
+  <table width="30%" align="center" border="1" cellpadding="2" cellspacing="2">
+    <tr>
+      <td align="right">用户名:</td>
+      <td>
+        <input type="text" name="username">
+      </td>
+    </tr>
+    <tr>
+      <td align="right">密码:</td>
+      <td>
+        <input type="password" name="pwd">
+      </td>
+    </tr>
+    <tr>
+      <td align="center" colspan="2">
+        <input type="submit" value="登陆">
+      </td>
+    </tr>
+  </table>
+</form>
+<input type="button" value="user:query" id="query"><br>
+<input type="button" value="user:add" id="add"><br>
+<input type="button" value="user:update" id="update"><br>
+<input type="button" value="user:delete" id="delete"><br>
+<input type="button" value="user:export" id="export"><br>
+</body>
+
+<script type="text/javascript">
+  $(function () {
+    $("#query").on("click", function () {
+      $.post("/user/query", function (obj) {
+        alert(obj.msg);
+      })
+    });
+    $("#add").on("click", function () {
+      $.post("/user/add", function (obj) {
+        alert(obj.msg);
+      })
+    })
+    $("#update").on("click", function () {
+      $.post("/user/update", function (obj) {
+        alert(obj.msg);
+      })
+    })
+    $("#delete").on("click", function () {
+      $.post("/user/delete", function (obj) {
+        alert(obj.msg);
+      })
+    })
+    $("#export").on("click", function () {
+      $.post("/user/export", function (obj) {
+        alert(obj.msg);
+      })
+    })
+  });
+</script>
+</html>
