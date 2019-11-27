@@ -19,7 +19,7 @@ public class RoleServiceImpl implements RoleService {
 	@Override
 	public List<String> queryRolesByUserId(Integer userId) {
 		List<Role> list = roleMapper.queryRolesByUserId(userId);
-		List<String> roles=new ArrayList<String>();
+		List<String> roles=new ArrayList<>();
 		for (Role role : list) {
 			roles.add(role.getRolename());
 		}

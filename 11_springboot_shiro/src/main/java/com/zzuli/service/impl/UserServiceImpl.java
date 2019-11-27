@@ -15,6 +15,7 @@ public class UserServiceImpl implements UserService {
 
 	@Override
 	public User queryUserByUserName(String username) {
+		System.out.println();
 		return userMapper.queryUserByUserName(username);
 	}
 }
