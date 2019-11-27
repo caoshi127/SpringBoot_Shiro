@@ -58,6 +58,7 @@ public class LoginController {
      */
     @RequestMapping("logOut")
     public String logOut(HttpServletRequest request) {
+        System.out.println("LoginController.logOut");
         // 清空session
         Enumeration<String> an = request.getSession().getAttributeNames();
         while (an.hasMoreElements()) {
